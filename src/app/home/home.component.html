@@ -1,0 +1,101 @@
+<div class="nav">
+  <input type="checkbox" id="nav-check">
+  <div class="nav-header">
+    <div class="nav-title">
+      JoGeek
+    </div>
+  </div>
+  <div class="nav-btn">
+    <label for="nav-check">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+  </div>
+  
+  <div class="nav-links">
+    <img *ngIf="isUserLogedIn"  src="{{userData.profilePic}}" style="width: 30px; height: 30px; border-radius: 50%;" alt="">
+    <a *ngIf="isUserLogedIn">{{userData.email}}</a>
+    
+    <a *ngIf="isUserLogedIn" >My Profie</a>
+    <a *ngIf="isUserLogedIn" >My bookings</a>
+    <a  (click)="logOut()" *ngIf="isUserLogedIn"  >Log out</a>
+    <a (click)="logIn()" *ngIf="!isUserLogedIn">Log In</a>
+    <a *ngIf="!isUserLogedIn">Register</a>
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label for="search-text">Search</label>
+  <input
+    type="text"
+    class="form-control"
+    id="search"
+    aria-describedby="search"
+    [(ngModel)]="search"
+    placeholder="Enter text to search"
+    autofocus
+  />
+
+
+  <ul class="list-group list-group-flush">
+
+    <li
+      *ngFor="let city of cities | appFilter : search"
+      class="list-group-item"
+    >
+      <div class="form-check">
+        <input type="checkbox" (click)="selectCity(city)">
+        <label class="form-check-label" for="flexCheckDefault">
+          {{ city }}
+        </label>
+      </div>
+    </li>
+  </ul>
+</div>
+<div *ngFor=" let user of arrayData">
+<h2 >{{user.title}}</h2>
+</div>
+<!-- <h2> {{ name }}</h2>
+<h3> {{ surname }}
+</h3>
+<button (click)="submit($event)">Submit </button>
+<button type="button" (click)="click($event)" class="btn btn-outline-primary">Primary</button>
+
+
+<input  type="text" [(ngModel)]="title"/>
+
+<h2>Your given title is {{ title }}</h2>
+<br>
+<br>
+<button type="button" (click)="navigateToOtherPage()" class="btn btn-outline-primary">Go to about Page</button>
+
+
+<button (click)="showText=!showText">
+  Ok
+</button>
+
+<div *ngIf="showText">
+    <h2>Gayatri is here.</h2>
+</div>
+<button (click)="checkGivenText('2')"> Update the sentence</button>
+<button type="button" (click)="navigateToOtherPage()" class="btn btn-outline-primary">Go to about Page</button>
+<button type="button" (click)="navigateToAboutPage()" class="btn btn-outline-primary">Accessusername</button>
+
+    
+
+
+
+ <div *ngFor="let student of students">
+    <p>
+        {{ student | json}}
+    </p>
+<p>
+    {{ student.name }}
+</p>
+<p>
+    {{ student.year }}
+</p>
+</div>  -->
+<!-- Image and text -->

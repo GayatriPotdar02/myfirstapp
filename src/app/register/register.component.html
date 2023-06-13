@@ -1,0 +1,23 @@
+
+<div class="contact-us">
+  <label >
+    <input type="file" id="file" (change)="selectFile($event)">
+
+    <span></span>
+</label>
+
+<img *ngIf="imageURl"  src="{{imageURl}}" style="width: 50px; height: 50px; border-radius: 50%;" alt="">
+  <form [formGroup]="registerForm">
+    <input class="form-control" formControlName="name" placeholder="Name" [(ngModel)]="name" required="" type="text" />
+  
+    <input type="email" class="form-control" formControlName="email" placeholder="Email Address" [(ngModel)]="email" />
+    <input class="form-control" formControlName="phone" placeholder="Enter your phone number" [(ngModel)]="phone"
+      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" type="tel" />
+    <input type="password" class="form-control" formControlName="password" placeholder="Enter your password"
+      [(ngModel)]="password" />
+    <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm your password"
+      [(ngModel)]="confirmPassword" />
+
+    <button (click)="submitdata()" type="button">SIGN UP</button>
+  </form>
+</div>

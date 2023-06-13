@@ -1,0 +1,9 @@
+<p>file works!</p>
+<div style="margin-top: 400px; margin-left: 400px;">
+<label>
+    <input type="file" id="file" (change)="selectFile($event)">
+    <span></span>
+</label>
+
+<img *ngIf="imageURl" src="{{imageURl}}" style="width: 200px; height: 200px;" alt="">
+</div>

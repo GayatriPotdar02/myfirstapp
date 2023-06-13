@@ -1,0 +1,99 @@
+<!-- <p>about works!</p>
+{{ rollno}}
+<button type="button" (click)="navigateToOtherPage()" class="btn btn-outline-primary">Go to home page</button> -->
+ <form [formGroup]="registerForm">
+
+    <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            placeholder="Name" 
+          />
+          <div
+            *ngIf="
+              registerForm.controls['name'].invalid &&
+              (registerForm.controls['name'].dirty ||
+                registerForm.controls['name'].touched)
+            "
+            class="alert alert-danger"
+          >
+           Name is required.
+          </div>
+<br>
+          <input
+            type="email"
+            class="form-control"
+            formControlName="email"
+            placeholder="Email Address"
+          />
+          <div
+            *ngIf="
+              registerForm.controls['email'].invalid &&
+              (registerForm.controls['email'].dirty ||
+                registerForm.controls['email'].touched)
+            "
+            class="alert alert-danger"
+          >
+           email is required.
+          </div>
+<br>
+          <input
+            type="password"
+            class="form-control"
+            formControlName="password"
+            placeholder="Enter your password"
+          />
+          <div
+            *ngIf="
+              registerForm.controls['password'].invalid &&
+              (registerForm.controls['password'].dirty ||
+                registerForm.controls['password'].touched)
+            "
+            class="alert alert-danger"
+          >
+           password is required.
+          </div>
+<br>
+          <input
+            type="password"
+            class="form-control"
+            formControlName="confirmPassword"
+            placeholder="Confirm your password"
+          />
+          <div
+            *ngIf="
+              registerForm.controls['confirmPassword'].invalid &&
+              (registerForm.controls['confirmPassword'].dirty ||
+                registerForm.controls['confirmPassword'].touched)
+            "
+            class="alert alert-danger"
+          >
+          confirmPassword is required.
+          </div>
+          <br>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="phone"
+            placeholder="Enter your phone number"
+          />
+          <div
+            *ngIf="
+              registerForm.controls['number'].invalid &&
+              (registerForm.controls['number'].dirty ||
+                registerForm.controls['number'].touched)
+            "
+            class="alert alert-danger"
+          >
+           number is required.
+          </div>
+          <br>
+          <button (click)="submit()">Submit</button>
+</form> -->
+
+<!-- <h3 *ngIf="username">{{username | lowercase}}</h3>
+<h3 *ngIf="surname">{{surname}} </h3>
+<h3>{{today | date:"halfday"}} </h3> -->
+
+<button mat-button (click)="openDialog()">Open dialog</button>
+<button (click)="toster()">Toster</button>

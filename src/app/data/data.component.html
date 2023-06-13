@@ -1,0 +1,42 @@
+
+<!-- 
+  <li  style="margin-left:50px; padding:20x;"  *ngFor="let city of cities">
+
+ 
+    <label>
+      <input [(ngModel)]="city.isChecked" (change)="onChange()" type="checkbox" />
+      {{city.city}}
+    </label>
+
+
+  </li>
+<div>
+
+<h2>selected Cities</h2>
+
+{{ selectedCitiesList | json}}
+
+</div> -->
+
+
+ 
+<div style="display:flex;">
+    
+  <div *ngFor="let card of cards" class="card" style="width:18rem; margin-left:20px;">
+         
+         <div class="card-body">
+           <h5 class="card-title">{{card.name}}</h5>
+           <h6 class="card-subtitle mb-2 text-muted">{{card.job}} </h6>
+           <p class="card-text">{{card.phoneNo}}</p>
+           <!-- <p class="card-text">{{card.info}}</p> -->
+           <button type="button" (click)="openDialog(card)"  class="btn btn-outline-primary">View more</button>
+          
+        
+          </div>
+        
+   </div>
+     
+ </div>
+
+
+ 

@@ -1,0 +1,23 @@
+<p>detail-indo works!</p>
+<h2>{{getCardDetails.name}}</h2>
+<h5>{{getCardDetails.info}}</h5>
+
+<div style="margin-left: 150px; margin-top:100px; padding: 20px;">
+    <input type="radio" placeholder="MarutiSuzuki" name="MarutiSuzuki" [(ngModel)]="selectedCompany" value="model1" /> 
+    <label for="MarutiSuzuki"> MarutiSuzuki </label>
+    
+    <br>
+    
+      <input type="radio" placeholder="toyota" name="toyota" [(ngModel)]="selectedCompany" value="model2" />
+      <label for="toyota"> Toyota </label><br><br>
+      <button type="button" (click)="submit()" class="btn btn-outline-primary">Show Related Info</button>
+    </div>
+
+    <div *ngIf="showData=='model1'" >
+     <p>This company has new upcoming models like vagaar,breeza swift etc.</p>   
+    </div> 
+
+    <div *ngIf="showData=='model2'" >
+        <p>This company has new upcoming models like innova,fortuner etc.</p>   
+    </div>
+    
